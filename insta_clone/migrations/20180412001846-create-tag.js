@@ -11,6 +11,9 @@ module.exports = {
       content: {
         type: Sequelize.STRING
       },
+      image_post_id: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
