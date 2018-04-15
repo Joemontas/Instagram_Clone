@@ -39,4 +39,10 @@ router.put('/:id', function(req, res) {
     });
 });
 
-module.exports = router;
+module.exports = function(passport) {
+  router.post('/signup', passport.authenticate('local-signup'), function(req, res) {
+    res.json({user: req.user});
+  });
+
+  return router;
+};
