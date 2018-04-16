@@ -11,12 +11,12 @@ router.get('/', function(req, res, next) {
 });
 
 //CREATE USER
-router.post('/', function(req, res) {
-  User.create(req.body)
-    .then(function(newUser) {
-      res.send(newUser);
-    });
-});
+// router.post('/', function(req, res) {
+//   User.create(req.body)
+//     .then(function(newUser) {
+//       res.send(newUser);
+//     });
+// });
 
 //DELETE USER
 router.delete('/:id', function(req, res) {
