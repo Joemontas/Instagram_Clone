@@ -2,6 +2,11 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/index').user;
 
+module.exports = function(passport) {
+  router.post('/signup', passport.authenticate('local-signup'), function(req, res) {
+    res.json({user: req.user});
+  });
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   User.findAll()
@@ -39,10 +44,13 @@ router.put('/:id', function(req, res) {
     });
 });
 
+<<<<<<< HEAD
 module.exports = function(passport) {
   router.post('/signup', passport.authenticate('local-signup'), function(req, res) {
     res.json({user: req.user});
   });
+=======
+>>>>>>> da1e65c30317c3c0108df40e581b0b5868414177
 
   return router;
 };
